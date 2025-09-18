@@ -1,0 +1,14 @@
+.header {
+    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(11, 10, 10, 0.65);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #0d0c22;
+}

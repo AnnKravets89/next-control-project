@@ -1,0 +1,17 @@
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user .avatar img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.user .name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #5a5252;
+}
