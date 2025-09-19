@@ -8,5 +8,13 @@ export const movieService = {
             page: page,
         });
 
+    },
+
+    getMovies: async (page: number): Promise<IMoviesResponse> => {
+        return fetcherMovies('/discover/movie', {
+            language: "en-US",
+            sort_by: "popularity.desc",
+            page: page,
+        });
     }
 }

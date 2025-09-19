@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "./header.module.css";
 import Logo from "@/components/header-components/logo-components/Logo";
 import Menu from "@/components/header-components/menu-components/Menu";

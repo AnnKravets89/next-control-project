@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "@/components/home-components/home.module.css";
 import {movieService} from "@/services/movie-service/api.movies.service";
 import PopularMovie from "@/components/popular-movies-components/PopularMovie";

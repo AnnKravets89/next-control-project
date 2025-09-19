@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import {IMovies} from "@/models/movies-models/MoviesModel";
 import styles from "./popular.movie.module.css";
 import Link from "next/link";
@@ -11,7 +11,7 @@ type PopularMoviesProps = {
 const PopularMovie: FC<PopularMoviesProps> = ({movie}) => {
     return (
         <div className={styles.posterContainer}>
-            <Link href={{pathname: `/movie/${movie.id}`,}} className={styles.posterCard}>
+            <Link href={{pathname: `/movie/${movie.id}`}} className={styles.posterCard}>
                 <div>
                     <PosterPreview poster_path={movie.poster_path} title={movie.original_title} className={styles.posterSmall}/>
                     <h2>{movie.title}</h2>

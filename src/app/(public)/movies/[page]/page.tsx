@@ -1,5 +1,5 @@
-import MoviesList from "@/components/movies-list-components/MoviesList";
 import {FC} from "react";
+import MoviesList from "@/components/movies-list-components/MoviesList";
 
 type Props = {
     params: {
@@ -7,7 +7,7 @@ type Props = {
     }
 }
 
-const MoviesPage:FC<Props> = ({params}) => {
+const MoviePage:FC<Props> = ({params}) => {
     return (
         <div>
             <MoviesList params={params}/>
@@ -15,4 +15,5 @@ const MoviesPage:FC<Props> = ({params}) => {
     );
 };
 
-export default MoviesPage;
+export default MoviePage;
+
