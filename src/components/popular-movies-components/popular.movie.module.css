@@ -1,0 +1,29 @@
+.posterContainer {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    background: #0d0c22;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s ease;
+}
+.posterContainer:hover {
+    transform: scale(1.1);
+}
+.posterSmall {
+    width: 170px;
+    height: 220px;
+    border-radius: 12px;
+
+}
+.posterCard {
+    width: 170px;
+    font-size: 10px;
+    text-decoration: none;
+}
+.posterCard h2 {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px;
+}

@@ -1,5 +1,4 @@
 import {BASE_URL, fetchOptions} from "@/services/base-fetch-config";
-import {IMoviesResponse} from "@/models/movies-models/MoviesResponseModel";
 
 interface IMovieParams {
     language?: string;
@@ -7,7 +6,7 @@ interface IMovieParams {
 }
 
 export const fetcherMovies = async (
-    path: string, params: IMovieParams = {}): Promise<IMoviesResponse> => {
+    path: string, params: IMovieParams = {}) => {
     const url = new URL(`${BASE_URL}${path}`);
 
     if (params.language) {
@@ -21,14 +20,15 @@ export const fetcherMovies = async (
         const response = await fetch(url.toString(), fetchOptions);
 
         if (!response.ok) {
-            throw new Error(`Error! Status: ${response.status}`);
+            const errorText = await response.text();
+            throw new Error(`Error fetching movies: ${response.status} - ${response.statusText}. Details: ${errorText}`);
         }
 
-        const data: IMoviesResponse = await response.json();
+        const data = await response.json();
         console.log(data);
         return data;
     } catch (error) {
-        console.log(`Failed to fetch from ${path}:`,error);
+        console.log(`Failed to fetch from movie API path ${path}:`,error);
         throw error;
     }
 };
