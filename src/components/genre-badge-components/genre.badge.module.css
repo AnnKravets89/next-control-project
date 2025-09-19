@@ -1,0 +1,17 @@
+.genreBadge p {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    background-color: #0b1e5e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.genreBadge:hover p {
+    background-color: #1887f5;
+    color: #000;
+}
