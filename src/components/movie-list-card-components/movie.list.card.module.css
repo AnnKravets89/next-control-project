@@ -1,0 +1,195 @@
+.movieCard {
+    width: 100%;
+    padding-top: 70px;
+    padding-left: 150px;
+    background: #0d0c22;
+}
+.movieCardContainer {
+    width: 100%;
+    min-height: 100vh;
+    background: #041c27;
+    position: relative;
+}
+.movieCardContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0d0c22, rgba(0, 0, 0, 0) 40%);
+    pointer-events: none;
+}
+.movieCardContent {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.titleItemsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.titleRatingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.title h1 {
+    color: white;
+    font-size: 28px;
+}
+.title p {
+    color: gray;
+}
+.rating {
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.rating p {
+    font-size: 14px;
+    color: gray;
+    padding-right: 10px;
+}
+.posterLarge {
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.87);
+}
+.posterItemsContainer{
+    width: 100%;
+    display: flex;
+    gap: 100px;
+}
+.labelsItems {
+    display: flex;
+    gap: 60px;
+}
+.labels {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    color: rgba(211, 211, 211, 0.74);
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    color: #d1cfcf;
+}
+.country {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.genres {
+    height: 25px;
+    display: flex;
+    gap: 10px;
+}
+.genreLink {
+    text-decoration: none;
+}
+.languages {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.descriptionExpandedContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.descriptionProduction {
+    display: flex;
+    justify-content: space-between;
+}
+.description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.description h3 {
+    color: #d1cfcf;
+    padding-left: 100px;
+}
+.descText {
+    color: rgba(211, 211, 211, 0.74);
+    margin-bottom: 10px;
+}
+.homepage {
+    display: flex;
+    justify-content: flex-end;
+}
+.homepage a {
+    text-decoration: none;
+    color: #135da6;
+    font-size: 20px;
+}
+.collectionImage {
+    display: flex;
+    gap: 70px;
+}
+.expandedInfo {
+    width: 40%;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: rgba(6, 50, 76, 0.66);;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.47);
+}
+.companies {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.companyTitle {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+.prodCountry {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.prodCountryName {
+    font-size: 13px;
+    color: rgba(191, 188, 188, 0.74);
+}
+.collection {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.collectionTitle {
+    color: #d1cfcf;;
+    font-size: 18px;
+    padding-left: 100px;
+    margin-bottom: 20px;
+}
+.collectionName {
+    color: #d1cfcf;
+}
+.backdropImage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

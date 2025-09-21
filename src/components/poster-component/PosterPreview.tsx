@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 type PosterPreviewProps = {
-    poster_path: string | null,
+    poster_path?: string | null,
     title?: string,
     className?: string,
 }

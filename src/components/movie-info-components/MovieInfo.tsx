@@ -11,7 +11,7 @@ type MovieInfoProps = {
 const MovieInfo: FC<MovieInfoProps> = ({movie}) => {
     return (
         <div className={styles.movieInfoContainer}>
-            <Link href={{pathname: `/movie/${movie.id}`}} className={styles.movieInfoCard}>
+            <Link href={{pathname: `/movie/${movie.id}`, query:{data: JSON.stringify(movie)}}} className={styles.movieInfoCard}>
                 <div>
                     <PosterPreview poster_path={movie.poster_path} title={movie.original_title} className={styles.posterMedium}/>
                 </div>
