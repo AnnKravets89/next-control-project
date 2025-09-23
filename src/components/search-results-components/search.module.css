@@ -1,17 +1,35 @@
-.moviesList {
+.moviesSearchList {
     width: 100%;
     height: 100%;
     padding-top: 70px;
     padding-left: 150px;
     background: #0d0c22;
 }
-.movieListContainer {
+.movieSearchListContainer {
     width: 100%;
     min-height: 90.25vh;
     background: url("/home-background.jpg") no-repeat bottom fixed;
     background-size: cover;
     overflow: hidden;
     position: relative;
+}
+.movieSearchListContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0d0c22, rgba(0, 0, 0, 0) 40%);
+    pointer-events: none;
+}
+.movieSearchListGrid {
+    width: 100%;
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 230px);
+    justify-content: center;
+    gap: 50px;
 }
 .searchBox {
     width: 40%;
@@ -20,9 +38,9 @@
     background: rgba(9, 10, 69, 0.74);
     border-radius: 10px;
 }
-/*.searchTitle {*/
-/*    text-align: center;*/
-/*    font-size: 30px;*/
-/*    color: whitesmoke;*/
+.searchTitle {
+    text-align: center;
+    font-size: 30px;
+    color: whitesmoke;
 
-/*}*/
+}

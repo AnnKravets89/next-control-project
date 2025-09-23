@@ -76,7 +76,7 @@
 }
 .labelsItems {
     display: flex;
-    gap: 60px;
+    gap: 150px;
 }
 .labels {
     display: flex;

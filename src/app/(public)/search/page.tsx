@@ -24,13 +24,12 @@ const SearchPage = async ({searchParams}:SearchProps) => {
     }
     return (
         <div>
-            <h2 className={'text-center text-3xl text-white'}>Search results for: {query}</h2>
-            <SearchBar initialQuery={query}/>
             {query && (
                 <SearchResults
                     results={results}
                     currentPage={currentPage}
                     totalPages={total_pages}
+                    query={query}
                 />
             )}
         </div>

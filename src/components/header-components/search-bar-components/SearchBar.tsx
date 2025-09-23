@@ -5,15 +5,19 @@ import {FC, useState} from "react";
 import {useRouter} from "next/navigation";
 
 type SearchBarProps = {
-    initialQuery: string;
+    initialQuery?: string;
 }
 const SearchBar: FC<SearchBarProps> = ({initialQuery}) => {
-    const [query, setQuery] = useState(initialQuery);
+    const [query, setQuery] = useState(initialQuery || '');
     const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        router.push(`/search?query=${query}`);
+        if (query.trim()) {
+            router.push(`/search?query=${query}`);
+            setQuery('');
+        }
+
     }
     return (
         <form onSubmit={handleSubmit}  className={styles.searchBar}>
