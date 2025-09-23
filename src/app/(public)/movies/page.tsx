@@ -2,15 +2,15 @@ import MoviesList from "@/components/movies-list-components/MoviesList";
 import {FC} from "react";
 
 type Props = {
-    params: {
+    searchParams: {
         page?: string;
     }
 }
 
-const MoviesPage:FC<Props> = ({params}) => {
+const MoviesPage:FC<Props> = ({searchParams}) => {
     return (
         <div>
-            <MoviesList params={params}/>
+            <MoviesList searchParams={searchParams}/>
         </div>
     );
 };

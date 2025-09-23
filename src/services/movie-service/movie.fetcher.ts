@@ -15,6 +15,9 @@ export const fetcherMovies = async (
     if (params.page) {
         url.searchParams.append('page', params.page.toString());
     }
+    if (params.with_genres) {
+        url.searchParams.append('with_genres', params.with_genres.toString());
+    }
 
     try {
         const response = await fetch(url.toString(), fetchOptions);

@@ -4,13 +4,13 @@ import MovieInfo from "@/components/movie-info-components/MovieInfo";
 import Pagination from "@/components/pagination-components/Pagination";
 
 type Props = {
-    params: {
+    searchParams: {
         page?: string;
     }
 }
 
-const MoviesList = async ({params}: Props) => {
-    const currentPage = Number(params.page || 1);
+const MoviesList = async ({searchParams}: Props) => {
+    const currentPage = Number(searchParams.page || 1);
     const {results, total_pages} = await movieService.getMovies(currentPage);
 
     return (

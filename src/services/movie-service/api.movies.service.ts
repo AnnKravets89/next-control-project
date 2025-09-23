@@ -25,4 +25,13 @@ export const movieService = {
             language: "en-US",
         });
     },
+
+    getMoviesByGenre: async (genreId: number, page?: number): Promise<IMoviesResponse> => {
+        return fetcherMovies('/discover/movie', {
+            with_genres: genreId,
+            language: "en-US",
+            sort_by: "popularity.desc",
+            page: page,
+        });
+    },
 }

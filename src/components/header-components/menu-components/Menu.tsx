@@ -12,7 +12,7 @@ const Menu = () => {
                     <Link href="/movies">Movies</Link>
                 </li>
                 <li>
-                    <Link href="/genres">Genres</Link>
+                    <Link href="/genre">Genres</Link>
                 </li>
             </ul>
         </div>

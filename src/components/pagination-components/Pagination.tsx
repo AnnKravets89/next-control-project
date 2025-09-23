@@ -1,20 +1,24 @@
 "use client";
 import styles from "./pagination.module.css";
 import {FC} from "react";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 
 type PaginationProps = {
     currentPage: number;
     totalPages: number;
-    genreId?: number;
 }
 
-const Pagination: FC<PaginationProps> = ({currentPage, totalPages, genreId}) => {
+const Pagination: FC<PaginationProps> = ({currentPage, totalPages}) => {
     const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
 
     const handlePageChange = (newPage: number) => {
+        const newSearchParams = new URLSearchParams(searchParams.toString());
+        newSearchParams.set('page', newPage.toString());
 
-        router.push(`/movies/${newPage}`);
+        router.push(`${pathname}?${newSearchParams.toString()}`);
+
     }
 
     return (
