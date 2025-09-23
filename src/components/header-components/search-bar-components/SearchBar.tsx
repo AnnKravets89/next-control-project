@@ -1,12 +1,26 @@
+"use client";
 import Image from "next/image";
 import styles from "./search-bar.module.css";
+import {FC, useState} from "react";
+import {useRouter} from "next/navigation";
 
-const SearchBar = () => {
+type SearchBarProps = {
+    initialQuery: string;
+}
+const SearchBar: FC<SearchBarProps> = ({initialQuery}) => {
+    const [query, setQuery] = useState(initialQuery);
+    const router = useRouter();
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        router.push(`/search?query=${query}`);
+    }
     return (
-        <form  className={styles.searchBar}>
+        <form onSubmit={handleSubmit}  className={styles.searchBar}>
             <input
                 type="text"
-
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder={'Search movies...'}
 
             />

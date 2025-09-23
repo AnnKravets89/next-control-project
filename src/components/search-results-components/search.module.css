@@ -1,0 +1,28 @@
+.moviesList {
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    padding-left: 150px;
+    background: #0d0c22;
+}
+.movieListContainer {
+    width: 100%;
+    min-height: 90.25vh;
+    background: url("/home-background.jpg") no-repeat bottom fixed;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.searchBox {
+    width: 40%;
+    padding: 5px 0;
+    margin: 20px auto 0 auto;
+    background: rgba(9, 10, 69, 0.74);
+    border-radius: 10px;
+}
+/*.searchTitle {*/
+/*    text-align: center;*/
+/*    font-size: 30px;*/
+/*    color: whitesmoke;*/
+
+/*}*/

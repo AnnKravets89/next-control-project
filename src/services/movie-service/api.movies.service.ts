@@ -2,6 +2,7 @@ import {IMoviesResponse} from "@/models/movies-models/MoviesResponseModel";
 import {fetcherMovies} from "@/services/movie-service/movie.fetcher";
 import {IMovieCard} from "@/models/movie-card-models/MovieCardModel";
 import {fetcherMovieCard} from "@/services/movie-service/movie.card.fetcher";
+import page from "@/app/(public)/genre/page";
 
 export const movieService = {
     getPopularMovies: async (page: number = 1): Promise<IMoviesResponse> => {
@@ -31,6 +32,15 @@ export const movieService = {
             with_genres: genreId,
             language: "en-US",
             sort_by: "popularity.desc",
+            page: page,
+        });
+    },
+
+    getSearchMovies: async (query: string, page: number): Promise<IMoviesResponse> => {
+        return fetcherMovies('/search/movie', {
+            language: "en-US",
+            sort_by: "popularity.desc",
+            query: query,
             page: page,
         });
     },

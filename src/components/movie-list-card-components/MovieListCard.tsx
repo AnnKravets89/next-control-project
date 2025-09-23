@@ -104,48 +104,50 @@ const MovieListCard: FC<MovieCardProps> = ({movie}) => {
                                                 </Link>
                                             )}
                                         </div>
-                                        <div className={styles.collection}>
-                                            <p className={styles.collectionTitle}>
-                                                Belongs To Collection
-                                            </p>
-                                            <div className={styles.collectionName}>
-                                                {movie.belongs_to_collection?.name && (
-                                                    <p>{movie.belongs_to_collection?.name}</p>
-                                                )}
+
+                                        <div className={styles.expandedInfo}>
+                                            <div className={styles.companies}>
+                                                <p className={styles.companyTitle}>Production Companies:</p>
+                                                {
+                                                    movie.production_companies.map((company) => (
+                                                        <ProductionCompany key={company.id} company={company}/>
+                                                    ))
+                                                }
                                             </div>
-                                            <div className={styles.collectionImage}>
-                                                {movie.belongs_to_collection && (
-                                                    <>
-                                                        <PosterPreview poster_path={movie.belongs_to_collection.poster_path}/>
-                                                        <div className={styles.backdropImage}>
-                                                            <Backdrop backdrop_path={movie.belongs_to_collection.backdrop_path}/>
-                                                            <Backdrop backdrop_path={movie.backdrop_path}/>
-                                                        </div>
-                                                    </>
-                                                )}
+
+                                            <div className={styles.prodCountry}>
+                                                <p className={styles.companyTitle}>Production Countries:</p>
+                                                {
+                                                    movie.production_countries.map((country, index) => (
+                                                        <p key={index} className={styles.prodCountryName}>
+                                                            {country.name}  ({country.iso_3166_1})
+                                                        </p>
+                                                    ))
+                                                }
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className={styles.expandedInfo}>
-                                        <div className={styles.companies}>
-                                            <p className={styles.companyTitle}>Production Companies:</p>
-                                            {
-                                                movie.production_companies.map((company) => (
-                                                <ProductionCompany key={company.id} company={company}/>
-                                                ))
-                                            }
+                                    <div className={styles.collection}>
+                                        <p className={styles.collectionTitle}>
+                                            Belongs To Collection
+                                        </p>
+                                        <div className={styles.collectionName}>
+                                            {movie.belongs_to_collection?.name && (
+                                                <p>{movie.belongs_to_collection?.name}</p>
+                                            )}
                                         </div>
-
-                                        <div className={styles.prodCountry}>
-                                            <p className={styles.companyTitle}>Production Countries:</p>
-                                            {
-                                                movie.production_countries.map((country, index) => (
-                                                    <p key={index} className={styles.prodCountryName}>
-                                                        {country.name}  ({country.iso_3166_1})
-                                                    </p>
-                                                ))
-                                            }
+                                        <div className={styles.collectionImage}>
+                                            {movie.belongs_to_collection && (
+                                                <>
+                                                    <PosterPreview poster_path={movie.belongs_to_collection.poster_path}
+                                                                   className={styles.collectionPoster}/>
+                                                    <div className={styles.backdropImage}>
+                                                        <Backdrop backdrop_path={movie.belongs_to_collection.backdrop_path}/>
+                                                        <Backdrop backdrop_path={movie.backdrop_path}/>
+                                                    </div>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
